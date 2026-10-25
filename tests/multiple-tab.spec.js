@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test('two tabs share the same session', async ({ context }) => {
   // pages in the same context share cookies + localStorage
   const tab1 = await context.newPage();
-  await tab1.goto('/');
+  await tab1.goto('https://www.saucedemo.com/');
   await tab1.fill('#user-name', 'standard_user');
   await tab1.fill('#password', 'secret_sauce');
   await tab1.click('#login-button');
